@@ -2,16 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/shared/ui/Button";
+import { ScrollToSectionButton } from "@/features/scroll-to-section";
 
 export const Hero: React.FC = () => {
-  const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -23,8 +16,8 @@ export const Hero: React.FC = () => {
 
       {/* 메인 콘텐츠 */}
       <div className="relative z-10 container mx-auto section-padding">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 max-w-[1600px] mx-auto">
             {/* 로고와 애니메이션 */}
             <div className="relative mb-6 sm:mb-8">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative mx-auto mb-4 sm:mb-6 group">
@@ -57,7 +50,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* 설명 텍스트 */}
-            <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
+            <div className="max-w-4xl mx-auto mb-8 sm:mb-12 border-amber-300 border-2">
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-4 sm:mb-6">
                 백엔드 핵심 프로젝트들의{" "}
                 <span className="text-blue-400 font-semibold">기획 의도</span>,
@@ -83,9 +76,9 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* CTA 버튼들 */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 md:mb-20">
-            <button
-              onClick={scrollToProjects}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 md:mb-20 max-w-[1600px] mx-auto">
+            <ScrollToSectionButton
+              targetId="projects"
               className="group relative px-6 py-3 sm:px-8 sm:py-4 glass-card text-white font-semibold rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:glass-card-hover"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -120,7 +113,7 @@ export const Hero: React.FC = () => {
                   />
                 </svg>
               </span>
-            </button>
+            </ScrollToSectionButton>
 
             <button
               onClick={() =>
@@ -158,7 +151,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* 기능 카드들 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 responsive-grid max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 responsive-grid max-w-[1600px] mx-auto">
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-all duration-500" />
               <div className="relative glass-card rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:scale-105 hover:glass-card-hover group-hover:shadow-2xl group-hover:shadow-green-500/20">

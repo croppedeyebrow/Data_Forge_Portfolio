@@ -5,7 +5,7 @@ import { SITE_CONFIG } from "@/shared/config/constants";
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-[1600px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">

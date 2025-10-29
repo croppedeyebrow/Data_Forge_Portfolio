@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
         isScrolled ? "glass-card-hover shadow-2xl" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto py-4">
+      <div className="container mx-auto py-4 max-w-[1920px]">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 relative">
@@ -39,18 +39,18 @@ export const Header: React.FC = () => {
                 fill
                 className="object-contain rounded-lg"
                 priority
-                sizes="32px"
+                sizes="120px"
               />
             </div>
             <span className="text-xl font-bold text-gray-900">Data_Forge</span>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav className="hidden md:flex items-center gap-12">
             {NAVIGATION_ITEMS.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="px-4 py-2 glass rounded-xl text-gray-700 hover:glass-card-hover hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105"
+                className="px-6 py-2  !text-emerald-500 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105 cursor-pointer"
               >
                 {item.name}
               </button>

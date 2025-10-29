@@ -56,6 +56,20 @@ body {
   flex-direction: column;
 }
 
+/* 기본 텍스트 요소들에만 색상 상속 적용 */
+body > * {
+  color: inherit;
+}
+
+/* 버튼과 링크는 상속에서 제외 */
+button,
+a,
+input,
+select,
+textarea {
+  color: initial;
+}
+
 /* Ensure containers are properly centered */
 .container {
   width: 100%;
