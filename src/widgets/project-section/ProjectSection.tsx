@@ -18,9 +18,9 @@ export const ProjectSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100" />
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23000000%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
 
-      <div className="relative z-10 container mx-auto">
-        <div className="max-w-[1600px] mx-auto">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+      <div className="relative z-10">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-col px-4 sm:px-8 lg:px-12 xl:px-16">
+          <div className="mx-auto mb-12 max-w-[1600px] text-center sm:mb-16 md:mb-20">
             <div className="inline-block mb-4 sm:mb-6">
               <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-semibold rounded-full">
                 PORTFOLIO
@@ -30,7 +30,7 @@ export const ProjectSection: React.FC = () => {
               주요 프로젝트
             </h2>
             <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 sm:mb-8" />
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+            <p className="mx-auto text-lg text-gray-600 sm:text-xl md:text-2xl max-w-5xl leading-relaxed">
               백엔드 개발자로서 참여한 핵심 프로젝트들을 소개합니다.
               <span className="font-semibold text-gray-800">
                 각 프로젝트의 기획 의도부터 트러블슈팅까지

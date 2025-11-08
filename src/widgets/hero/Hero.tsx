@@ -15,9 +15,9 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20" />
 
       {/* 메인 콘텐츠 */}
-      <div className="relative z-10 container mx-auto section-padding">
-        <div className="max-w-[1920px] mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 max-w-[1600px] mx-auto">
+      <div className="relative z-10 section-padding">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-col px-4 sm:px-8 lg:px-12 xl:px-16">
+          <div className="mx-auto mb-8 max-w-[1600px] text-center sm:mb-12 md:mb-16 lg:mb-20">
             {/* 로고와 애니메이션 */}
             <div className="relative mb-6 sm:mb-8">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative mx-auto mb-4 sm:mb-6 group">
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* 설명 텍스트 */}
-            <div className="max-w-4xl mx-auto mb-8 sm:mb-12 border-amber-300 border-2">
+            <div className="mx-auto mb-8 max-w-4xl sm:mb-12 border-amber-300 border-2">
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-4 sm:mb-6">
                 백엔드 핵심 프로젝트들의{" "}
                 <span className="text-blue-400 font-semibold">기획 의도</span>,
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* CTA 버튼들 */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 md:mb-20 max-w-[1600px] mx-auto">
+          <div className="mx-auto mb-12 flex max-w-[1600px] flex-col items-center justify-center gap-4 sm:mb-16 sm:flex-row sm:gap-6 md:mb-20">
             <ScrollToSectionButton
               targetId="projects"
               className="group relative px-6 py-3 sm:px-8 sm:py-4 glass-card text-white font-semibold rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:glass-card-hover"
@@ -151,7 +151,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* 기능 카드들 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 responsive-grid max-w-[1600px] mx-auto">
+          <div className="responsive-grid mx-auto grid max-w-[1600px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-all duration-500" />
               <div className="relative glass-card rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:scale-105 hover:glass-card-hover group-hover:shadow-2xl group-hover:shadow-green-500/20">
