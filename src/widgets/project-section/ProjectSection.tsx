@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Fragment } from "react";
 import { projectCategories } from "@/entities/project/data";
 import { ProjectCard } from "./ProjectCard";
 import {
@@ -8,65 +8,76 @@ import {
   useProjectDetailModal,
 } from "@/features/project-detail-modal";
 
+const SectionHeader = () => (
+  <div className="mx-auto mb-16 flex max-w-[1200px] flex-col items-center text-center">
+    <div className="glass-card mb-6 flex items-center gap-3 rounded-full px-5 py-2 shadow-lg">
+      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-xs font-semibold text-white shadow-md sm:h-9 sm:w-9 sm:text-sm">
+        PORTFOLIO
+      </span>
+      <span className="text-xs font-medium text-blue-600 sm:text-sm">
+        Projects & Case Studies
+      </span>
+    </div>
+    <h2 className="responsive-title mb-4 font-black tracking-tight text-slate-900 sm:mb-5">
+      주요 프로젝트
+    </h2>
+    <p className="text-base text-slate-500 sm:text-lg md:text-xl">
+      백엔드 개발자로서 참여한 핵심 프로젝트들을 소개합니다.
+      <span className="font-semibold text-gray-800">
+        각 프로젝트의 기획 의도부터 트러블슈팅까지
+      </span>{" "}
+      상세히 정리했습니다.
+    </p>
+    <div className="mt-6 h-px w-full max-w-[480px] bg-gradient-to-r from-transparent via-blue-400/40 to-transparent" />
+  </div>
+);
+
+const CategoryHeader = ({ name, index }: { name: string; index: number }) => (
+  <div className="mx-auto flex max-w-[1200px] flex-col items-center text-center">
+    <div className="glass mb-4 flex items-center gap-3 rounded-full px-4 py-2">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-sm font-semibold text-white">
+        {index + 1}
+      </span>
+      <span className="text-xs font-medium uppercase tracking-[0.2em] text-blue-500">
+        Featured Category
+      </span>
+    </div>
+    <h3 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
+      {name}
+    </h3>
+    <div className="mt-4 h-px w-full max-w-[360px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" />
+  </div>
+);
+
 export const ProjectSection: React.FC = () => {
   const { isOpen, selectedProject, openModal, closeModal } =
     useProjectDetailModal();
 
   return (
     <section id="projects" className="relative section-padding overflow-hidden">
-      {/* 배경 그라데이션 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23000000%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/70 to-indigo-100/80" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23000000%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
 
       <div className="relative z-10">
-        <div className="mx-auto flex w-full max-w-[1920px] flex-col px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="mx-auto mb-12 max-w-[1600px] text-center sm:mb-16 md:mb-20">
-            <div className="inline-block mb-4 sm:mb-6">
-              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-semibold rounded-full">
-                PORTFOLIO
-              </span>
-            </div>
-            <h2 className="responsive-title font-black text-gray-900 mb-4 sm:mb-6">
-              주요 프로젝트
-            </h2>
-            <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 sm:mb-8" />
-            <p className="mx-auto text-lg text-gray-600 sm:text-xl md:text-2xl max-w-5xl leading-relaxed">
-              백엔드 개발자로서 참여한 핵심 프로젝트들을 소개합니다.
-              <span className="font-semibold text-gray-800">
-                각 프로젝트의 기획 의도부터 트러블슈팅까지
-              </span>{" "}
-              상세히 정리했습니다.
-            </p>
-          </div>
+        <div className="mx-auto flex w-full max-w-[1920px] flex-col gap-20 px-6 sm:px-10 lg:px-16 xl:px-20">
+          <SectionHeader />
 
-          <div className="space-y-12 sm:space-y-16 md:space-y-20">
+          <div className="space-y-16 sm:space-y-20 md:space-y-24">
             {projectCategories.map((category, categoryIndex) => (
-              <div key={category.name} className="relative">
-                <div className="text-center mb-8 sm:mb-12">
-                  <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-xs sm:text-sm">
-                        {categoryIndex + 1}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900">
-                      {category.name}
-                    </h3>
-                  </div>
-                  <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto" />
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 responsive-grid">
+              <Fragment key={category.name}>
+                <CategoryHeader name={category.name} index={categoryIndex} />
+                <div className="responsive-grid mx-auto grid max-w-[1600px] grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
                   {category.projects.map((project, projectIndex) => (
                     <div
                       key={project.id}
-                      className="group"
+                      className="group opacity-0"
                       style={{
-                        animationDelay: `${
-                          (categoryIndex * 2 + projectIndex) * 200
-                        }ms`,
                         animation: "fadeInUp 0.6s ease-out forwards",
-                        opacity: 0,
+                        animationDelay: `${
+                          (categoryIndex * category.projects.length +
+                            projectIndex) *
+                          200
+                        }ms`,
                       }}
                     >
                       <ProjectCard
@@ -76,13 +87,12 @@ export const ProjectSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </Fragment>
             ))}
           </div>
         </div>
       </div>
 
-      {/* 프로젝트 상세 모달 */}
       <ProjectDetailModal
         isOpen={isOpen}
         project={selectedProject}
