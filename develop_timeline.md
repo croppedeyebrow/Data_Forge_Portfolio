@@ -76,9 +76,13 @@
 - 추가: `cursor-pointer` 클래스 추가하여 호버 시 포인터 커서 효과 적용
 - 비고: 에메랄드 색상의 네비게이션과 명확한 커서 피드백으로 사용자 경험 개선
 
-### 2025-10-29 CSS 상속 문제 근본적 해결
+### 2025-11-14 스타일 전략 전환 합의
 
-- 수정: `globals.css`에서 버튼과 링크 요소들을 색상 상속에서 제외
-- 추가: `button, a, input, select, textarea { color: initial; }` 규칙 추가
-- 변경: Header에서 `!important` 제거하고 일반 Tailwind 클래스 사용
-- 비고: CSS 상속 충돌 문제를 근본적으로 해결하여 향후 유사한 문제 방지
+- 목표: 함수형 사고 + FSD/FSP 구조를 유지하면서 스타일 가독성을 확보
+- 결정사항:
+  - Tailwind 의존성을 줄이고 **CSS Modules + PostCSS** 조합을 기본 스타일 시스템으로 채택
+  - `clsx` 기반 유틸만 유지하고 Tailwind 의존성은 완전히 제거
+  - `project-section`, `hero` 등 주요 위젯부터 단계적으로 CSS Modules 로 이관하면서 기존 Tailwind 클래스를 모두 치환
+  - 전역 스타일(`globals.css`)은 기본 토큰/유틸 수준으로만 유지하고 컴포넌트별 스타일은 모듈에 캡슐화
+  - PostCSS 플러그인(stack: nesting, autoprefixer 등)을 확장해 재사용 가능한 mixin/토큰 전략 마련
+- 비고: 스타일 변경은 섹션 단위로 점진적으로 진행하며, 변경 시 develop timeline에 기록

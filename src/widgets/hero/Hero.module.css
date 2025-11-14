@@ -1,0 +1,276 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top,
+      rgba(14, 165, 233, 0.4),
+      rgba(67, 56, 202, 0.65)
+    ),
+    linear-gradient(135deg, #0f172a 0%, #111827 45%, #1e1b4b 100%);
+  z-index: 0;
+}
+
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.sectionContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 6rem 1.25rem 4rem;
+}
+
+.heroBody {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+}
+
+.logoGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.45),
+    rgba(147, 51, 234, 0.35)
+  );
+  filter: blur(18px);
+  opacity: 0.7;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.logoInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+}
+
+.heroTitleAccent {
+  display: inline-block;
+  background: linear-gradient(120deg, #38bdf8 0%, #a855f7 40%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  color: rgba(248, 250, 252, 0.85);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.descriptionBlock {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(226, 232, 240, 0.85);
+  font-size: clamp(1rem, 2.6vw, 1.35rem);
+  line-height: 1.8;
+}
+
+.descriptionHighlight {
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.ctaSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.ctaDivider {
+  width: 100%;
+  max-width: 540px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.4),
+    transparent
+  );
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryCta {
+  min-width: 220px;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(59, 130, 246, 0.35);
+}
+
+.secondaryCta {
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.secondaryCta:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.cardsGrid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  position: relative;
+  border-radius: 28px;
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px);
+}
+
+.featureGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  filter: blur(30px);
+  z-index: 0;
+}
+
+.featureContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.featureIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.featureTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.85);
+  line-height: 1.7;
+}
+
+.cardsGrid:hover .featureCard:not(:hover) {
+  opacity: 0.8;
+}
+
+.githubIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.ctaArrow {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (min-width: 768px) {
+  .logoBlock,
+  .descriptionBlock {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .ctaButtons,
+  .ctaSection {
+    align-items: flex-start;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}

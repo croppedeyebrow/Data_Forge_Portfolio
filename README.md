@@ -34,7 +34,7 @@
 
 - Next.js
 - TypeScript
-- Tailwind CSS
+- PostCss
 
 ### 프로젝트에 활용된 기술 스택:
 
