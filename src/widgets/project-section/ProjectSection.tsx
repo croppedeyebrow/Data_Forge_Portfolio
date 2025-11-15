@@ -17,8 +17,9 @@ const SectionHeader = () => (
     </div>
     <h2 className={styles.sectionTitle}>주요 프로젝트</h2>
     <p className={styles.sectionDescription}>
-      백엔드 개발자로서 참여한 핵심 프로젝트들을 소개합니다.
-      <span>각 프로젝트의 기획 의도부터 트러블슈팅까지</span> 상세히 정리했습니다.
+      백엔드 개발자로서 참여한 핵심 프로젝트들을 소개합니다. <br />
+      <span>각 프로젝트의 기획 의도부터 트러블슈팅까지</span> 상세히
+      정리했습니다.
     </p>
     <div className={styles.sectionDivider} />
   </div>

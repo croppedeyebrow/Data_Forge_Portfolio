@@ -71,7 +71,7 @@ export const techStackCategories: TechStackCategory[] = [
       },
       {
         category: "Styling",
-        technologies: ["Tailwind CSS"],
+        technologies: ["Styled Components", "CSS Modules"],
         description: "유틸리티 기반 스타일링",
       },
       {
