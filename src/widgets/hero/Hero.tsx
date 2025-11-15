@@ -6,6 +6,9 @@ import { ScrollToSectionButton } from "@/features/scroll-to-section";
 import { featureCards } from "./model/featureCards";
 import styles from "./Hero.module.css";
 
+const RESUME_FILE_URL =
+  process.env.NEXT_PUBLIC_RESUME_URL ?? "/files/data-forge-resume.pdf";
+
 export const Hero: React.FC = () => {
   return (
     <section id="home" className={styles.heroSection}>
@@ -84,6 +87,29 @@ export const Hero: React.FC = () => {
                 </svg>
                 GitHub 방문
               </button>
+
+              <a
+                href={RESUME_FILE_URL}
+                download
+                className={styles.resumeCta}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg
+                  className={styles.resumeIcon}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 5v10m0 0l4-4m-4 4l-4-4M5 19h14"
+                  />
+                </svg>
+                이력서 다운로드
+              </a>
             </div>
           </div>
 

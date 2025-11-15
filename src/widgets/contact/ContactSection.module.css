@@ -96,9 +96,27 @@
 }
 
 .cardsGrid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cardsRow {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .cardsRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .card {
@@ -161,13 +179,27 @@
   justify-content: center;
   color: #fff;
 }
-
 .iconBlue {
   background: linear-gradient(135deg, #3b82f6, #14b8a6);
 }
 
 .iconGreen {
   background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+.iconPurple {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.iconOrange {
+  background: linear-gradient(135deg, #ff8a05, #ff6a3d);
+}
+
+.iconMagenta {
+  background: linear-gradient(135deg, #d946ef, #8b5cf6);
+}
+
+.iconCyan {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
 }
 
 .cardTitle {
